@@ -63,7 +63,10 @@ const lastFoodElementRef = useCallback(node => {
               e.preventDefault();
               setcategoryParam(e.target.dataset.id);
     }
-
+    const handleCategoryFoodMexican = (e) =>{
+      e.preventDefault();
+      setcategoryParam(e.target.dataset.id);
+}
 
     const mapingFoods = foods.map((value,i) =>{
     
@@ -88,7 +91,6 @@ const lastFoodElementRef = useCallback(node => {
                          <div className="col-3 col-2-mob">
                                 <a className="btn btn-category hide-text"  onClick={handleCategoryBurgers}  data-id="burgers" href="#">Burgers</a>
                          </div>
-                 
                           
                    
              </div>

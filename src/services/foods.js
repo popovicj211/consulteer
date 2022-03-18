@@ -16,17 +16,19 @@ const ApiGetFoods =  async  (setFoods , setLoading, setError ,pageNum , cat, set
 
     const confif = {
       headers: {
-        'Accept': 'application/json',
-        'Access-Control-Allow-Origin':'*'
+        'Accept': 'application/json'//,
+     //   'Access-Control-Allow-Origin':'*'
       }  
     }
 
     const perPage = pageNum * limit;
 
+    
+
   console.log(limit)
   console.log(perPage)
-   await axios.get(`${url}yelp/business/restaurants/limit/${perPage}/category/${cat}`, {confif}
-        ).then(response => {
+   await axios.get(`/api/yelp/business/restaurants/limit/${perPage}/category/${cat}`, {confif}
+   ).then(response => {
           const businesses = response.data.businesses;
 
  console.log(businesses)
@@ -46,7 +48,8 @@ const ApiGetFoods =  async  (setFoods , setLoading, setError ,pageNum , cat, set
         console.log(response)
     
     }).catch(error => {
-      if (axios.isCancel(error)) return
+    //  if (axios.isCancel(error)) return
+      console.log(error);
       setError(true)
     });
 
