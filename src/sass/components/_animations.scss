@@ -1,0 +1,25 @@
+@keyframes loading {
+    0%{
+     transform: translateX(0);
+    }
+    25%{
+     transform: translateX(15px);
+    }
+    50%{
+     transform: translateX(-15px);
+    }
+    100%{
+     transform: translateX(0);
+    }
+      
+  }
+
+
+  @keyframes gradient-animation {
+    from {
+      left: 0%;
+    }
+    to {
+      left: 100%;
+    }
+  }

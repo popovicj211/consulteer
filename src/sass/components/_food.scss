@@ -1,0 +1,149 @@
+
+
+.food{
+   padding: 20px 45px 50px 45px;
+    background-color: $secondary;
+    position: relative;
+  
+ display: grid;
+ //column-gap: 2rem;
+ row-gap: 1.6rem;
+ grid-template-rows: auto auto auto;
+ justify-content: center;
+
+    @include border-radius($border-radius-food);
+   box-shadow: 0 4px 8px 0 rgba($primary, 0.2), 0 6px 20px 0 rgba($primary, 0.19);
+
+
+
+   @include respond(phone) {
+    padding: 10px 0px 10px 20px;
+      column-gap: 0.6rem;
+       grid-template-columns:  repeat(3, 1fr);
+       grid-template-rows: auto;
+       & div:not(:first-child){
+        padding-top:15px;
+    }
+    @include border-radius($border-radius-food-mobile);
+
+  }
+
+
+  @include respond(only-tab-port) {
+    padding: 15px 0px 15px 0px;
+ }
+
+    &__image{
+       width: 100%;
+       padding: 0 27px;
+       height: 180px;
+       object-fit: cover;
+      display: block;
+  
+       @include respond(phone) {
+      padding: 0;
+        height: 100px;
+      }
+
+
+    }
+
+  
+
+
+    &__content{
+         .food__name{
+          width: 172px;
+          @include border-radius($border-radius-food-name);
+          padding: 12px 15px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          background-color: $secondary;
+            margin: 0 auto;
+        box-shadow: 0px 1px 1px 2px $shadow;
+
+        @include respond(phone) {
+          width:70px;
+          height: 50px;
+          padding: 0;
+          box-shadow: none;
+          margin-left: 0;
+          text-overflow:clip;
+          white-space: wrap;
+        }
+        @include respond(only-tab-port) {
+          width:160px
+       }
+  
+      }
+    }
+      .food__rep{
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+ grid-template-columns: 1fr 70px ;
+ column-gap: 1.5em;
+  justify-content:space-between;
+  padding: 25px 10px 15px 10px;
+
+  @include respond(phone) {
+   grid-template-rows: repeat(2, 1fr);
+   grid-template-columns: repeat(1, 1fr);
+    row-gap: 2.6rem;
+    padding: 5px 10px 5px 10px;
+    align-content:space-between;
+
+  }
+
+        
+          &-price{
+          padding-left: 15px;
+         @include respond(phone) {
+          padding-top: 5px;
+          text-align: left;
+     }
+          }
+          &-ratings{
+          font-size: 1.4em;
+          letter-spacing: 3px;
+            padding: 0;
+           .fa-star{
+            color: $stars;
+             &.checked{
+                color: $primary;
+             }
+           }
+          @include respond(phone) {
+                 text-align: left;
+            }
+          }
+      }
+
+         
+  
+     &__view{
+      position: absolute;
+      left: 50%;
+      bottom: 0%;
+  //   transform: translate(60% , 50%);
+  transform: translate(-50% , 50%);
+     @include respond(phone) {
+      bottom:30%;
+      left: 49%;
+      transform: translate(-50% , 100%);
+      }
+  
+     
+  }
+ 
+}
+
+
+
+
+
+
+
+
+
+

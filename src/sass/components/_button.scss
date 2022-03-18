@@ -1,0 +1,27 @@
+
+.btn-food{
+    padding: 10px 40px;
+    @include border-radius($border-radius-food-name);
+    @include respond(phone) {
+        font-size: $default-font-mobile;
+        padding: 5px 20px;
+      }
+}
+
+.btn-category{
+    padding: 20px 40px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    @include border-radius($border-radius-food-name);
+    @include respond(phone) {
+        padding: 10px 15px;
+      /*  &:last-child{
+            display: none;
+        }*/
+      }
+}
+
+.btn{
+    background: $btnLinGra;
+    box-shadow: 2px 2px 1px $shadow;
+}

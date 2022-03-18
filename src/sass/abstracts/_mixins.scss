@@ -1,0 +1,50 @@
+
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 600px) { @content };    
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 900px) { @content };     
+    }
+    @if $breakpoint == only-tab-port {
+        @media only screen and (min-width: 600px) and (max-width: 900px) { @content };     
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 1200px) { @content };    
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 1800px) { @content };    
+    }
+}
+
+
+@mixin border-radius($radius) {
+       border-radius: $radius;
+       -moz-border-radius: $radius;
+       -webkit-border-radius: $radius;
+}
+
+
+@mixin flex($direction,$row-content , $column-content) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $row-content;
+    align-items: $column-content;
+}
+
+
+@mixin shadow-box() {
+   // box-shadow: 10x 10px 10px $primary;
+    box-shadow: 0px 1px 1px 2px #808080;
+ //box-shadow: 0 4px 8px 0 rgba($primary, 0.2), 0 6px 20px 0 rgba($primary 0.19);
+   // -webkit-box-shadow: 10x 10px 10px $primary;
+  //  -moz-box-shadow: 10x 10px 10px $primary;
+}
+
+
+
+
+
+

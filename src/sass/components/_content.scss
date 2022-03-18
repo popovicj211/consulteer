@@ -1,0 +1,10 @@
+/*section{
+    & > div:first-child{
+        padding: 2em 0;
+    }
+    @include respond(phone) {
+        & > div:first-child{
+            padding: 1em 0;
+        }
+      }
+}*/
