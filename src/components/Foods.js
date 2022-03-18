@@ -1,6 +1,6 @@
 import React, {useEffect, useState , useRef ,useCallback} from 'react';
 import Food from './Food';
-import { ApiGetFoods ,ApiGetAllCategories,  ApiGetFoodsCategory } from '../services/foods'; ;
+import { ApiGetFoods ,ApiGetAllCategories,  ApiGetFoodsCategory } from '../services/foods'; 
 import FoodSkeleton from './Food-Skeleton';
 
 const Foods = () => {
@@ -53,12 +53,11 @@ const lastFoodElementRef = useCallback(node => {
 
      const handleCategoryFoodTrack = (e) =>{
               e.preventDefault();
-
+              setcategoryParam(e.target.dataset.id);
      }
      const handleCategoryVegetarian = (e) =>{
                 e.preventDefault();
                 setcategoryParam(e.target.dataset.id);
-              console.log(e.target.dataset.id)
     }
     const handleCategoryBurgers = (e) =>{
               e.preventDefault();
@@ -81,7 +80,7 @@ const lastFoodElementRef = useCallback(node => {
              <div className={loading ? 'categories skeleton' : 'categories'} >
 
                          <div className="col-3 col-2-mob">
-                                  <a className="btn btn-category hide-text"  href="#">Food trucks</a>
+                                  <a className="btn btn-category hide-text"    onClick={handleCategoryFoodTrack}   data-id="foodtrucks"  href="#">Food trucks</a>
                          </div>
                          <div className="col-3 col-2-mob">
                                   <a className="btn btn-category hide-text"  onClick={handleCategoryVegetarian}  data-id="vegetarian"  href="#">Vegeterian</a>

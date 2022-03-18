@@ -28,19 +28,15 @@ const ApiGetFoods =  async  (setFoods , setLoading, setError ,pageNum , cat, set
    await axios.get(`${url}yelp/business/restaurants/limit/${perPage}/category/${cat}`, {confif}
         ).then(response => {
           const businesses = response.data.businesses;
-          setFoods(prevFoods => {
-            return [...new Set([...prevFoods, ...businesses])]
-          })
+
  console.log(businesses)
         // setFoods(businesses);
-       /* if(cat !== null)
+        if(cat === '')
           setFoods(prevFoods => {
             return [...new Set([...prevFoods, ...businesses])]
           });
              else
-          setFoods((prevFoods) => {
-            return [...new Set([ ...businesses , ...prevFoods,])]
-          });*/
+          setFoods([...businesses]);
 
           setLoading(false)
   
