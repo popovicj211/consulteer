@@ -46,7 +46,7 @@
       padding: 0;
         height: 100px;
       }
-      @include respond(tab-port) {
+      @include respond(only-tab-port) {
           height: 160px;
           padding: 0 32px;
         }
